@@ -3,18 +3,14 @@ from turtle import Turtle
 # 1. create scoreboard to display player 1 and player 2 scores.
 # 2. create the net that runs down the middle of the screen.
 
-x_cor = 0
-y_cor = 615
-color = "white"
-
 # constructor - creates scoreboard
 class Scoreboard(Turtle): 
-    def __init__(self):
+    def __init__(self, x_cor = 0, y_cor = 615, color = "white"):
         super.__init__(shape = "square")
         self.p1_score = 0 
         self.p2_score = 0
         self.color(color, color)
-        self.goto(x= x_cor,y= y_cor)
+        self.goto(x = x_cor,y = y_cor)
         self.net = []
         self.create_net()
         self.update_scorboard()
