@@ -1,5 +1,4 @@
 from turtle import Turtle
-
 #tasks: 
 # 1. create scoreboard to display player 1 and player 2 scores.
 # 2. create the net that runs down the middle of the screen.
