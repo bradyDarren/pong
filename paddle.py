@@ -19,7 +19,8 @@ class Paddle:
             self.segments.append(paddle_segment)
     
     def move(self):
-        for section in range(len(self.segments)):
-            current_y = self.segments[section].ycor()
-            new_y = self.segments[section + 1].ycor(current_y)
-
+        for section in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments(section - 1).xcor()
+            new_y = self.segments(section - 1).ycor()
+            self.segments[section].goto(x=new_x, y= new_y)
+        self.segments[0].forward(20)
