@@ -1,5 +1,9 @@
 from turtle import Turtle
 
+#tasks: 
+# 1. create scoreboard to display player 1 and player 2 scores.
+# 2. create the net that runs down the middle of the screen.
+
 x_cor = 0
 y_cor = 615
 color = "white"
@@ -19,16 +23,21 @@ class Scoreboard(Turtle):
 # creates scoreboard - displays p1 and p2 current score.
     def update_scorboard(self):
         self.clear()
-        self.write()
-        
-
+        self.write(f"{self.p1_score}          {self.p2_score}")
+    
+    def increase_score(self):
+        pass
 
 # creates the net in the middle of the screen.
     def create_net(self):
-        while self.net[-1::].ycor() > -y_cor:
-            net_section = Turtle()
-            net_section.color(color,color)
-            net_section.goto(x=x_cor,y=y_cor)
+        if self.net[-1::].ycor() > -y_cor:
+            for _ in range(3):
+                net_section = Turtle()
+                net_section.color(color,color)
+                net_section.goto(x=x_cor,y=y_cor)
+                self.net.append(net_section)
+                y_cor -= 20
+            y_cor -= 60
 
 
 
