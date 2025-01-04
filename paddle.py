@@ -13,8 +13,13 @@ class Paddle:
         for i in range(4):
             paddle_segment = Turtle(shape=self.paddle_shape)
             paddle_segment.penup()
+            paddle_segment.setheading(270)
             paddle_segment.color(self.color, self.color)
             paddle_segment.goto(x = self.xcord, y = self.ycord + (20 * i))
             self.segments.append(paddle_segment)
-
+    
+    def move(self):
+        for section in range(len(self.segments)):
+            current_y = self.segments[section].ycor()
+            new_y = self.segments[section + 1].ycor(current_y)
 
