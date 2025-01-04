@@ -6,7 +6,7 @@ from turtle import Turtle
 # constructor - creates scoreboard
 class Scoreboard(Turtle): 
     def __init__(self, x_cor = 0, y_cor = 615, color = "white"):
-        super.__init__(shape = "square")
+        super.__init__()
         self.p1_score = 0 
         self.p2_score = 0
         self.color(color, color)
@@ -25,18 +25,11 @@ class Scoreboard(Turtle):
         if player == 1:
             self.p1_score += 1
         elif player == 2:
-            self.p2_score += 2
+            self.p2_score += 1
+        self.update_scorboard()
     
 # creates the net in the middle of the screen.
-    def create_net(self):
-        if self.net[-1::].ycor() > -y_cor:
-            for _ in range(3):
-                net_section = Turtle()
-                net_section.color(self.color,self.color)
-                net_section.goto(x=self.x_cor,y=self.y_cor)
-                self.net.append(net_section)
-                y_cor -= 20
-            y_cor -= 60
+ 
 
 
 
