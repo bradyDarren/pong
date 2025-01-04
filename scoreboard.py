@@ -32,8 +32,8 @@ class Scoreboard(Turtle):
         if self.net[-1::].ycor() > -y_cor:
             for _ in range(3):
                 net_section = Turtle()
-                net_section.color(color,color)
-                net_section.goto(x=x_cor,y=y_cor)
+                net_section.color(self.color,self.color)
+                net_section.goto(x=self.x_cor,y=self.y_cor)
                 self.net.append(net_section)
                 y_cor -= 20
             y_cor -= 60
