@@ -24,10 +24,14 @@ class Scoreboard(Turtle):
     def update_scorboard(self):
         self.clear()
         self.write(f"{self.p1_score}          {self.p2_score}")
-    
-    def increase_score(self):
-        pass
 
+# takes winning player for that set and increases that player score.  
+    def increase_score(self, player):
+        if player == 1:
+            self.p1_score += 1
+        elif player == 2:
+            self.p2_score += 2
+    
 # creates the net in the middle of the screen.
     def create_net(self):
         if self.net[-1::].ycor() > -y_cor:
