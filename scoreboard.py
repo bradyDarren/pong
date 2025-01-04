@@ -30,7 +30,8 @@ class Scoreboard(Turtle):
             self.p2_score += 2
         self.update_scorboard()
     
-# # creates the net in the middle of the screen.
+# creates the net in the middle of the screen.
+# """Reevaluate this function - questionable"""
     def create_net(self):
         if self.net[-1::].ycor() > -y_cor:
             for _ in range(3):
