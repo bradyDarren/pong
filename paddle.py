@@ -8,6 +8,7 @@ class Paddle:
         self.paddle_shape = paddle_shape
         self.color = color
         self.segments = []
+        self.create_paddle()
     
     def create_paddle(self):
         for i in range(4):
@@ -23,4 +24,6 @@ class Paddle:
             new_x = self.segments(section - 1).xcor()
             new_y = self.segments(section - 1).ycor()
             self.segments[section].goto(x=new_x, y= new_y)
-        self.segments[0].forward(20)
+
+    def up(self):
+        self.segments[0].setheading(270)
