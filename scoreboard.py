@@ -41,5 +41,5 @@ class Scoreboard(Turtle):
         net_section.shapesize(stretch_wid = 1.5, stretch_len = .25)
         net_section.goto(x=self.x_cor, y= self.y_cor)
         self.net.append(net_section)
-        while self.net[-1::].ycor() > 
+        # while self.net[-1::].ycor() > 
 
