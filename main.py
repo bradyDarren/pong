@@ -7,6 +7,8 @@ screen.bgcolor("black")
 screen.setup(width=1250, height=1000)
 screen.title("PONG GAME")
 
+
+
 scoreboard = Scoreboard()
 
 
