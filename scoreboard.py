@@ -33,8 +33,7 @@ class Scoreboard(Turtle):
             self.p2_score += 2
         self.update_scorboard()
     
-# creates the net in the middle of the screen.
-# """Reevaluate this function - questionable"""
+# creates a single section of the net within the middle of the screen.
     def net_section(self):
         net_section = Turtle(shape="square")
         net_section.penup()
@@ -43,13 +42,11 @@ class Scoreboard(Turtle):
         net_section.goto(x=self.x_cor, y= self.y_cor)
         self.net.append(net_section)
     
-    # def create_net(self):
-    #     while self.net[-1::].ycor() > 480:
-    #         self.net_section()
-    #         self.ycor -= 45
+# 
+    def create_net(self, net_size):
+        while self.net[-1::].ycor() > 480:
+            self.net_section()
+            self.ycor -= 45
 
-score = Scoreboard()
-for _ in range(3):
-    score.net_section()
 
 
