@@ -17,6 +17,7 @@ class Scoreboard(Turtle):
         self.x_cor = x_cor
         self.goto(x = self.x_cor,y = self.y_cor)
         self.net = []
+        # self.create_net()
         self.update_scorboard()
 
 # creates scoreboard - displays p1 and p2 current score.
@@ -34,12 +35,21 @@ class Scoreboard(Turtle):
     
 # creates the net in the middle of the screen.
 # """Reevaluate this function - questionable"""
-    def create_net(self):
+    def net_section(self):
         net_section = Turtle(shape="square")
         net_section.penup()
         net_section.color(self.tint,self.tint)
         net_section.shapesize(stretch_wid = 1.5, stretch_len = .25)
         net_section.goto(x=self.x_cor, y= self.y_cor)
         self.net.append(net_section)
-        # while self.net[-1::].ycor() > 
+    
+    # def create_net(self):
+    #     while self.net[-1::].ycor() > 480:
+    #         self.net_section()
+    #         self.ycor -= 45
+
+score = Scoreboard()
+for _ in range(3):
+    score.net_section()
+
 
