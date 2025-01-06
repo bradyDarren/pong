@@ -5,16 +5,18 @@ from turtle import Turtle
 
 # constructor - creates scoreboard
 class Scoreboard(Turtle): 
-    def __init__(self, x_cor = 0, y_cor = 450, color = "white"):
+    def __init__(self, x_cor = 0, y_cor = 450, tint = "white"):
         super().__init__()
-        self.hideturtle()
-        self.penup()
         self.p1_score = 0 
         self.p2_score = 0
-        self.color(color, color)
-        self.goto(x = x_cor,y = y_cor)
+        self.hideturtle()
+        self.penup()
+        self.tint = tint
+        self.color(self.tint, self.tint)
+        self.y_cor = y_cor
+        self.x_cor = x_cor
+        self.goto(x = self.x_cor,y = self.y_cor)
         self.net = []
-        self.create_net()
         self.update_scorboard()
 
 # creates scoreboard - displays p1 and p2 current score.
@@ -33,16 +35,11 @@ class Scoreboard(Turtle):
 # creates the net in the middle of the screen.
 # """Reevaluate this function - questionable"""
     def create_net(self):
-        if self.net[-1::].ycor() > -y_cor:
-            for _ in range(3):
-                net_section = Turtle()
-                net_section.color(self.color,self.color)
-                net_section.goto(x=self.x_cor,y=self.y_cor)
-                self.net.append(net_section)
-                y_cor -= 20
-            y_cor -= 60
-
-
-
-
+        net_section = Turtle(shape="square")
+        net_section.penup()
+        net_section.color(self.tint,self.tint)
+        net_section.shapesize(stretch_wid = 1.5, stretch_len = .25)
+        net_section.goto(x=self.x_cor, y= self.y_cor)
+        self.net.append(net_section)
+        while self.net[-1::].ycor() > 
 
