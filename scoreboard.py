@@ -17,7 +17,7 @@ class Scoreboard(Turtle):
         self.x_cor = x_cor
         self.goto(x = self.x_cor,y = self.y_cor)
         self.net = []
-        # self.create_net()
+        self.net_section() 
         self.update_scorboard()
 
 # creates scoreboard - displays p1 and p2 current score.
@@ -42,11 +42,12 @@ class Scoreboard(Turtle):
         net_section.goto(x=self.x_cor, y= self.y_cor)
         self.net.append(net_section)
     
-# 
-    def create_net(self, net_size):
-        while self.net[-1::].ycor() > 480:
+# creates the entire net based on window size.
+    def create_net(self, net_height):
+        net_height = (net_height / 2) - 60
+        while self.net[-1].ycor() > -net_height:
             self.net_section()
-            self.ycor -= 45
+            self.y_cor -= 45
 
 
 
