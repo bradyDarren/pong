@@ -2,17 +2,18 @@ from turtle import Screen
 from scoreboard import Scoreboard
 
 # background setup 
-screen = Screen()
-screen.bgcolor("black")
-screen.setup(width=1250, height=1000)
-screen.title("PONG GAME")
-
+window = Screen()
+window.bgcolor("black")
+window.setup(width=1250, height=1000)
+window_height = window.window_height()
+window_width = window.window_width()
+window.title("PONG GAME")
 
 
 scoreboard = Scoreboard()
+scoreboard.create_net(window_height)
 
 
 
 
-
-screen.exitonclick()
+window.exitonclick()
