@@ -1,5 +1,8 @@
 from turtle import Turtle
 
+# redo this to where the input of the sreen height is taken into account.
+
+
 # constructor - creates scoreboard
 class Scoreboard(Turtle): 
     def __init__(self, x_cor = 0, y_cor = 450, tint = "white"):
