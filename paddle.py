@@ -19,9 +19,10 @@ class Paddles:
         paddle.shapesize(stretch_len = 3, stretch_wid = .5)
         paddle.goto(x = self.xcord, y = self.ycord)
         self.two_paddles.append(paddle)
-       
-    def move_up(self, player):
-        self.two_paddles[player - 1].forward(10)
+
+# figure out how to take an input of the player playing and respond using the keystroke.
+    def move_up(self):
+        self.two_paddles[0].forward(10)
     
-    def move_down(self, player):
-        self.two_paddles[player - 1].backward(10)
+    def move_down(self):
+        self.two_paddles[0].backward(10)
