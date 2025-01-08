@@ -18,7 +18,7 @@ class Paddles:
             paddle.penup()
             paddle.setheading(self.heading)
             paddle.color(self.color, self.color)
-            paddle.shapesize(stretch_len = 4, stretch_wid = .5)
+            paddle.shapesize(stretch_len = 5, stretch_wid = 1)
             if len(self.two_paddles) != 1:
                 paddle.goto(x = -self.xcord, y = self.ycord)
             else:
