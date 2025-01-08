@@ -17,10 +17,15 @@ window.listen()
 # scoreboard = Scoreboard()
 # scoreboard.create_net(window_height)
 
-paddle_one = Paddles(xcord = -600, ycord= 0)
+paddles = Paddles(xcord = -600, ycord= 0)
 
-window.onkey(key="Up",fun=paddle_one.move_up)
-window.onkey(key="Down",fun=paddle_one.move_down)
+# key functions that enable paddle #1 to move up and down. 
+window.onkey(key="Up",fun=paddles.move_up_1)
+window.onkey(key="Down",fun=paddles.move_down_1)
+
+# key functions that enable paddle #2 to move up and down. 
+window.onkey(key="a",fun=paddles.move_up_2)
+window.onkey(key="z",fun=paddles.move_down_2)
 
 
 window.exitonclick()
