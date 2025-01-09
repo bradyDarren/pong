@@ -1,7 +1,8 @@
 from turtle import Turtle
 
 # set inital coordinates of paddle
-class Paddles: 
+# adjust this to inherit the Turtle Class and remove the create_paddles method.
+class Paddles(): 
     def __init__(self, xcord, ycord, color = "white", paddle_shape = "square", heading = 90):
         self.xcord = xcord 
         self.ycord = ycord
