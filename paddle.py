@@ -12,10 +12,10 @@ class Paddles(Turtle):
         self.goto(coordinates)
 
 # movement functions for the first paddle.
-    def move_up_1(self):
+    def move_up(self):
         move_to = self.ycor() + 20
         self.goto(self.xcor(), move_to)
     
-    def move_down_1(self):
+    def move_down(self):
         move_to = self.ycor() - 20
         self.goto(self.xcor(), move_to)
