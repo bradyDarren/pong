@@ -8,6 +8,7 @@ window.bgcolor("black")
 
 #set window size & title
 window.setup(width=800, height=600)
+window_height = window.window_height()
 window.title("PONG GAME")
 
 # removes the automatic animation from our window.
@@ -15,8 +16,8 @@ window.tracer(0)
 
 window.listen()
 
-# scoreboard = Scoreboard()
-# scoreboard.create_net(window_height)
+scoreboard = Scoreboard(window_height/2)
+scoreboard.create_net()
 
 paddle_1 = Paddles((-370,0))
 paddle_2 = Paddles((370,0))
