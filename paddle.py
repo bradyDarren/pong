@@ -13,14 +13,9 @@ class Paddles(Turtle):
 
 # movement functions for the first paddle.
     def move_up_1(self):
-        self.goto(self.xcor(), (self.ycor() + 20))
+        move_to = self.ycor() + 20
+        self.goto(self.xcor(), move_to)
     
-#     def move_down_1(self):
-#         self.two_paddles[0].backward(20)
-
-# # movement functions for the second paddle.
-#     def move_up_2(self):
-#         self.two_paddles[1].forward(20)
-    
-#     def move_down_2(self):
-#         self.two_paddles[1].backward(20)
+    def move_down_1(self):
+        move_to = self.ycor() - 20
+        self.goto(self.xcor(), move_to)
