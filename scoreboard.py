@@ -1,20 +1,17 @@
 from turtle import Turtle
 
-# redo this to where the input of the sreen height is taken into account.
-
-
 # constructor - creates scoreboard
 class Scoreboard(Turtle): 
-    def __init__(self, x_cor = 0, y_cor = 450, tint = "white"):
+    def __init__(self, y_cor):
         super().__init__()
         self.p1_score = 0 
         self.p2_score = 0
         self.hideturtle()
         self.penup()
-        self.tint = tint
+        self.tint = "white"
         self.color(self.tint, self.tint)
-        self.y_cor = y_cor
-        self.x_cor = x_cor
+        self.y_cor = y_cor - 30
+        self.x_cor = 0
         self.goto(x = self.x_cor,y = self.y_cor)
         self.net = []
         self.net_section() 
@@ -23,7 +20,7 @@ class Scoreboard(Turtle):
 # creates scoreboard - displays p1 and p2 current score.
     def update_scorboard(self):
         self.clear()
-        self.write(f"{self.p1_score}          {self.p2_score}", move = False, align = "center", font = ("Times New Roman", 40, "normal"))
+        self.write(f"{self.p1_score}          {self.p2_score}", move = False, align = "center", font = ("Times New Roman", 20, "normal"))
 
 # # takes winning player for that set and increases that player score.  
     def increase_score(self, player):
@@ -43,9 +40,8 @@ class Scoreboard(Turtle):
         self.net.append(net_section)
     
 # creates the entire net based on window size.
-    def create_net(self, net_height):
-        net_height = (net_height / 2) - 60
-        while self.net[-1].ycor() > -net_height:
+    def create_net(self):
+        while self.net[-1].ycor() > -self.y_cor:
             self.net_section()
             self.y_cor -= 45
 
