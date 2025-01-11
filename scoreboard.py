@@ -41,7 +41,8 @@ class Scoreboard(Turtle):
     
 # creates the entire net based on window size.
     def create_net(self):
-        while self.net[-1].ycor() > -self.y_cor:
+        net_end = -self.ycor()
+        while self.net[-1].ycor() > net_end:
             self.net_section()
             self.y_cor -= 45
             
