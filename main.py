@@ -1,6 +1,8 @@
 from turtle import Screen
 from scoreboard import Scoreboard
 from paddle import Paddles
+from ball import Ball
+import time  
 
 # background setup 
 window = Screen()
@@ -28,9 +30,19 @@ window.onkey(key = "Down", fun = paddle_1.move_down)
 window.onkey(key = "a", fun = paddle_2.move_up)
 window.onkey(key = "z", fun = paddle_2.move_down)
 
+ball = Ball()
 game_on = True
+game_speed = .1
 
 while game_on: 
+    time.sleep(game_speed)
     window.update()
+    # ball.ball_movement()
+
+#     if ball.ycor() >= 290 or ball.ycor() <= -290:
+#         ball.bounce_y()
+    
+#     if ball.distance(paddle_1) < 50 and ball.xcor() > 340 or ball.distance(paddle_2) < 50 and ball.xcor() < -340:
+#         ball.bounce_x()
 
 window.exitonclick()
