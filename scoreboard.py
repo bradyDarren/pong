@@ -14,7 +14,7 @@ class Scoreboard(Turtle):
         self.x_cor = 0
         self.goto(x = self.x_cor,y = self.y_cor)
         self.net = []
-        self.net_section() 
+        self.net_section()
         self.update_scorboard()
 
 # creates scoreboard - displays p1 and p2 current score.
@@ -44,6 +44,7 @@ class Scoreboard(Turtle):
         while self.net[-1].ycor() > -self.y_cor:
             self.net_section()
             self.y_cor -= 45
+            
 
-
-
+score = Scoreboard(300)
+score.create_net()
